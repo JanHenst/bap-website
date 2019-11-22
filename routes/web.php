@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 })->name('home');
+
+
+Route::get('/jan', function () {
+    return 'dit is de pagina van Jan';
+})->name('test');
+
+
+Route::get('/producten', 'ProductController@index');
