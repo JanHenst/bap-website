@@ -15,10 +15,20 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
+Route::get('/contact', function () {
+    return 'Contact!';
+})->name('contact');
 
-Route::get('/jan', function () {
-    return 'dit is de pagina van Jan';
-})->name('test');
+
+Route::get('/producten', 'ProductController@index')->name('producten');
+Route::get('/producten/{id}', 'ProductController@showProduct')->name('product');
 
 
-Route::get('/producten', 'ProductController@index');
+Route::get('/dit/is/een/lange-url/zeg', 'PageController@longUrl')->name('page');
+Route::redirect('/korte-url', '/dit/is/een/lange-url/zeg')->name('kortere-url');
+
+
+Route::get('/admin', 'AdminController@list')->name('admin');
+
+
+Route::get('/blog/artikel/{artikel}', 'BlogController@showArtikel')->name('BlogArtikel');
