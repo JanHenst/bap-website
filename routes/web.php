@@ -21,7 +21,7 @@ Route::get('/contact', function () {
 
 
 Route::get('/producten', 'ProductController@index')->name('producten');
-Route::get('/producten/{id}', 'ProductController@showProduct')->name('product');
+Route::get('/producten/{category}/{id}', 'ProductController@showProduct')->name('product');
 
 
 Route::get('/dit/is/een/lange-url/zeg', 'PageController@longUrl')->name('page');

@@ -5,6 +5,9 @@
     <title></title>
   </head>
   <body>
-    Product pagina
+    <h2>Product pagina</h2>
+    <p>
+      oi boi
+    </p>
   </body>
 </html>
