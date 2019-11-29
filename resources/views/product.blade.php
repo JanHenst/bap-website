@@ -7,7 +7,8 @@
   <body>
     <h2>Product pagina</h2>
     <p>
-      oi boi
+      <h4>{{ $category }}</h4>
+      <h5>{{ $id }}</h5>
     </p>
   </body>
 </html>

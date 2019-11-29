@@ -21,7 +21,7 @@ Route::get('/contact', function () {
 
 
 Route::get('/producten', 'ProductController@index')->name('producten');
-Route::get('/producten/{category}/{id}', 'ProductController@showProduct')->name('product');
+Route::get('/producten/{category}/{id?}', 'ProductController@showProduct')->name('product');
 
 
 Route::get('/dit/is/een/lange-url/zeg', 'PageController@longUrl')->name('page');
@@ -31,4 +31,8 @@ Route::redirect('/korte-url', '/dit/is/een/lange-url/zeg')->name('kortere-url');
 Route::get('/admin', 'AdminController@list')->name('admin');
 
 
-Route::get('/blog/artikel/{artikel}', 'BlogController@showArtikel')->name('BlogArtikel');
+Route::get('/blog/artikel/{artikel}', 'BlogController@showArtikel')->where('artikel', '[A-Za-z]+');
+
+Route::get('/mijn-account', 'AccountController@view')->name('account');
+Route::get('/mijn-account/bestellingen/{bestelling?}', 'AccountController@bestelling')->name('account_bestellingen');
+Route::get('/mijn-account/instellingen', 'AccountController@instelling')->name('account_instellingen');
