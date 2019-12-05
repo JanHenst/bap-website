@@ -11,9 +11,8 @@ class ProductController extends Controller
         return "Nu zitten we in de products controller";
     }
 
-    public function showProduct($category, $id = 0)
+    public function showProduct($id = 0, Request $request)
     {
-      // return 'Category = ' . $category . ' en id = ' . $id;
-      return view('product', ['category' => $category, 'id' => $id]);
+        return response('GO AWAY it not found', 404);
     }
 }

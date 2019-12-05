@@ -21,8 +21,13 @@ Route::get('/contact', function () {
 
 
 Route::get('/producten', 'ProductController@index')->name('producten');
-Route::get('/producten/{category}/{id?}', 'ProductController@showProduct')->name('product');
+Route::get('/producten/{id}', 'ProductController@showProduct')->where('id', '[0-9]+');
 
+Route::prefix('admin')->group(function() {
+  Route::get('users', function() { return 'admin users'; });
+  Route::get('products', function() { return 'admin products'; });
+  Route::get('categories', function() { return 'admin categories'; });
+});
 
 Route::get('/dit/is/een/lange-url/zeg', 'PageController@longUrl')->name('page');
 Route::redirect('/korte-url', '/dit/is/een/lange-url/zeg')->name('kortere-url');
