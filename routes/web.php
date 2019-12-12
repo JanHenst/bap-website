@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('home');
+Route::get('/', 'HomeController@showHome')->name('home');
 
 Route::get('/contact', function () {
     return 'Contact!';

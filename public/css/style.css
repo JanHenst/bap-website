@@ -1,0 +1,12 @@
+body {
+  background: #495057;
+  font-family: 'Nunito', sans-serif;
+  color: #333;
+}
+
+header, nav, main,footer {
+  background: #ffffff;
+  padding: 20px;
+  border: 2px solid rgba(255, 47, 37, 0.79);
+  margin: 20px;
+}
