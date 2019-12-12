@@ -8,6 +8,18 @@ class HomeController extends Controller
 {
     public function showHome()
     {
-        return view('home');
+        $products = [
+          'Auto',
+          'Lamp',
+          'Telefoon',
+          'Mens'
+        ];
+
+        return view('home', ['producten' => $products]);
+    }
+
+    public function showName($name)
+    {
+      return view('showname', ['naam' => $name]);
     }
 }

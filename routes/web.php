@@ -12,14 +12,19 @@
 */
 
 Route::get('/', 'HomeController@showHome')->name('home');
+Route::get('/hallo/{name}', 'HomeController@showName');
+
 
 Route::get('/contact', function () {
     return 'Contact!';
 })->name('contact');
 
 
+
 Route::get('/producten', 'ProductController@index')->name('producten');
 Route::get('/producten/{id}', 'ProductController@showProduct')->where('id', '[0-9]+');
+
+
 
 Route::prefix('admin')->group(function() {
   Route::get('users', function() { return 'admin users'; });
@@ -27,14 +32,20 @@ Route::prefix('admin')->group(function() {
   Route::get('categories', function() { return 'admin categories'; });
 });
 
+
+
 Route::get('/dit/is/een/lange-url/zeg', 'PageController@longUrl')->name('page');
 Route::redirect('/korte-url', '/dit/is/een/lange-url/zeg')->name('kortere-url');
+
 
 
 Route::get('/admin', 'AdminController@list')->name('admin');
 
 
+
 Route::get('/blog/artikel/{artikel}', 'BlogController@showArtikel')->where('artikel', '[A-Za-z]+');
+
+
 
 Route::get('/mijn-account', 'AccountController@view')->name('account');
 Route::get('/mijn-account/bestellingen/{bestelling?}', 'AccountController@bestelling')->name('account_bestellingen');

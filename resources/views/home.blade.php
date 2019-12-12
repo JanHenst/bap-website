@@ -5,7 +5,20 @@ Homepage
 @endsection
 
 @section('content')
-<p>
-  Dit is de content op mijn laravel pagina
-</p>
+  <h2>Producten</h2>
+
+  <ol>
+    @foreach($producten as $product)
+      @if ($product == 'Auto')
+        <li><strong>{{ $product }}</strong></li>
+      @else
+        <li>{{ $product }}</li>
+      @endif
+    @endforeach
+  </ol>
+
+  @for($i=1; $i<=10; $i++)
+    {{ $i }}<br />
+  @endfor
+
 @endsection
