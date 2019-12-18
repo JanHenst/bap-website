@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,600">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
   </head>
   <body>
 
@@ -19,7 +19,10 @@
     </header>
 
     <nav>
-      Navigation
+      <ul>
+        <li><a href="{{ route('homepage') }}">Home</a></li>
+        <li><a href="{{ route('show-name', ['name' => 'Honk']) }}">Show a name</a></li>
+      </ul>
     </nav>
 
     <main>
