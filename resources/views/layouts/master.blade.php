@@ -13,16 +13,15 @@
     <header>
       <h2>
         @section('header')
-          De Header
+          Mijn Laravel site
         @show
       </h2>
     </header>
 
     <nav>
-      <ul>
-        <li><a href="{{ route('homepage') }}">Home</a></li>
-        <li><a href="{{ route('show-name', ['name' => 'Honk']) }}">Show a name</a></li>
-      </ul>
+        <a href="{{ route('homepage') }}">Home</a>
+        <a href="{{ route('show-name', ['name' => 'Honk']) }}">Show a name</a>
+        <a href="{{ route('add_products') }}">Add a product</a>
     </nav>
 
     <main>

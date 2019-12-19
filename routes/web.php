@@ -26,6 +26,11 @@ Route::get('/producten/{id}', 'ProductController@showProduct')->where('id', '[0-
 
 
 
+Route::get('/producten/add', 'ProductController@create')->name('add_products');
+Route::post('/producten/add', 'ProductController@store')->name('store_products');
+
+
+
 Route::prefix('admin')->group(function() {
   Route::get('users', function() { return 'admin users'; });
   Route::get('products', function() { return 'admin products'; });
