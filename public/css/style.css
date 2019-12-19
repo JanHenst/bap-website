@@ -42,3 +42,25 @@ nav a:hover {
   height: 2em;
   border-radius: 5px;
 }
+
+.first {
+  padding-top: 10px;
+}
+
+.alert {
+  background-color: #ff8080;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+.is-invalid {
+  border: 1px solid red;
+}
+
+.error-message {
+  margin: 7px;
+  margin-left: 0;
+  background: #ff4d4d;
+  color: white;
+  padding: 2px;
+}
