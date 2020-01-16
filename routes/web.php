@@ -55,3 +55,8 @@ Route::get('/blog/artikel/{artikel}', 'BlogController@showArtikel')->where('arti
 Route::get('/mijn-account', 'AccountController@view')->name('account');
 Route::get('/mijn-account/bestellingen/{bestelling?}', 'AccountController@bestelling')->name('account_bestellingen');
 Route::get('/mijn-account/instellingen', 'AccountController@instelling')->name('account_instellingen');
+
+
+
+Route::get('/bedrijven', 'CompanyController@list')->name('companies');
+Route::get('/bedrijven/{id}', 'CompanyController@details')->name('company');

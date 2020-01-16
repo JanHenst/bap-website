@@ -14,7 +14,7 @@ class HomeController extends Controller
           'Telefoon',
           'Mens'
         ];
-
+        
         return view('home', ['producten' => $products]);
     }
 
