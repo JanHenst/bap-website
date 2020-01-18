@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Product;
 
 class ProductController extends Controller
 {
@@ -13,8 +14,10 @@ class ProductController extends Controller
      */
     public function index()
     {
-      return "Nu zitten we in de products controller";
+      // $products = Product::all();
+      $products = Product::paginate(15);
 
+      return view('product.list', ['products' => $products]);
     }
 
     /**
@@ -35,15 +38,23 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-       $request->validate([
-         'title' => 'required|min:3',
-         'description' => 'required|min:10',
-         'price' => 'required|numeric|gt:0',
-         'pub_date' => 'required|after_or_equal:today',
-       ]
+
+      $uploadedfile = $request->file('image');
+      $newFilename = $uploadedfile->store('public/products');
+      dd($newFilename);
+
+       $productData = $request->validate(
+         [
+           'title' => 'required|min:3',
+           'description' => 'required|min:10',
+           'price' => 'required|numeric|gt:0',
+           'pub_date' => 'required|after_or_equal:today',
+         ]
      );
 
-     return 'Validatie top';
+     $product = Product::create($productData);
+
+     return 'Gegevens in de database opgeslagen!';
     }
 
     /**

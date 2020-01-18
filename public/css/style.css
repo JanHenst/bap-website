@@ -4,7 +4,7 @@ body {
   color: #333;
 }
 
-header, nav, main,footer {
+header, .linkNav, main,footer {
   background: #ffffff;
   padding: 20px;
   border: 2px solid black;
@@ -19,7 +19,7 @@ header {
   border-bottom: 0px;
 }
 
-nav {
+.linkNav {
   margin-top: -2em;
   border-top: 0;
   padding-top: 0;
@@ -40,6 +40,12 @@ nav a:hover {
 
 .back {
   text-decoration: none;
+}
+
+.head td {
+  border-bottom: solid 1px black;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 .submit_button {

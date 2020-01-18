@@ -12,7 +12,7 @@
     </div>
   @endif
 
-  <form action="{{ route('store_products') }}" method="POST">
+  <form action="{{ route('store_products') }}" method="POST" enctype="multipart/form-data">
     @csrf
     <div class="form-group first">
       <label for="">Titel:</label>
@@ -49,6 +49,16 @@
       <br>
       <input type="text" class="form-control @error('pub_date') is-invalid @enderror" name="pub_date" value="{{ old('pub_date') }}">
       @error('pub_date')
+        <div class="error-message">
+          {{ $message }}
+        </div>
+      @enderror
+    </div>
+    <div class="form-group">
+      <label for="">Afbeelding</label>
+      <br>
+      <input type="file" class="form-control @error('image') is-invalid @enderror" name="image">
+      @error('image')
         <div class="error-message">
           {{ $message }}
         </div>
