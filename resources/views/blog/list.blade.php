@@ -1,18 +1,20 @@
-@extends('layouts.master')
+@extends('layouts.app')
 
 @section('header')
-<h2>Alle producten</h2>
+<h2>Alle Blogs</h2>
 @endsection
 
 @section('content')
-<table class="bedrijven">
-  @foreach($products as $product)
-    <tr>
-      <td><a href="">{{ $product->title }}</a></td>
-      <td>{{ $product->description }}</td>
-      <td>{{ $product->price }}</td>
-      <td>{{ $product->pub_date }}</td>
-    <tr/>
+<div class="container-lg">
+  @foreach($blogs as $blog)
+  <hr>
+  <h5> {{ $blog->title }} </h5>
+    <p class="blogDesc"> {{ $blog->description }} </p>
+    <a class="blogRead" href="{{ route('blog.details', ['id' => $blog->id]) }}">Continue reading</a>
+    <p class="blogDate"> {{$blog->pub_date}} </p>
   @endforeach
-</table>
+<div/>
+
+{{ $blogs->links() }}
+
 @endsection

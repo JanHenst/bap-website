@@ -11,7 +11,7 @@
   </head>
   <body>
 
-    <header>
+    <header style="margin-top: 1em">
       <h2>
         @section('header')
           Mijn Laravel site
@@ -21,9 +21,11 @@
 
     <nav class="linkNav">
         <a href="{{ route('homepage') }}">Home</a>
-        <a href="{{ route('show-name', ['name' => 'Honk']) }}">Show a name</a>
         <a href="{{ route('add_products') }}">Add a product</a>
         <a href="{{ route('product.list') }}">All products</a>
+        <a href="{{ route('blog.list') }}">All blogs</a>
+        <a href="{{ route('add_blogs') }}">Make a blog</a>
+        
     </nav>
 
     <main>

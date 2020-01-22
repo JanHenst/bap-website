@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.app')
 
 @section('header')
 <h2>Alle producten</h2>
@@ -17,7 +17,7 @@
   @foreach($products as $product)
     <tbody>
       <tr>
-        <td><a href="">{{ $product->title }}</a></td>
+        <td><a href="{{ route('product.details', ['id' => $product->id]) }}">{{ $product->title }}</a></td>
         <td>{{ $product->description }}</td>
         <td>{{ $product->price }}</td>
         <td>{{ $product->pub_date }}</td>

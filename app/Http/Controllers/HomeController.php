@@ -6,20 +6,14 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function showHome()
-    {
-        $products = [
-          'Auto',
-          'Lamp',
-          'Telefoon',
-          'Mens'
-        ];
-        
-        return view('home', ['producten' => $products]);
-    }
 
-    public function showName($name)
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function index()
     {
-      return view('showname', ['naam' => $name]);
+        return view('home');
     }
 }

@@ -11,45 +11,22 @@
 |
 */
 
-Route::get('/', 'HomeController@showHome')->name('homepage');
-Route::get('/hallo/{name}', 'HomeController@showName')->name('show-name');
-
-//
-// Route::get('/contact', function () {
-//     return 'Contact!';
-// })->name('contact');
+Route::get('/', 'HomeController@index')->name('homepage');
 
 
-// Route::get('/producten', 'ProductController@index')->name('producten');
-// Route::get('/producten/{id}', 'ProductController@showProduct')->where('id', '[0-9]+');
 Route::get('/producten', 'ProductController@index')->name('product.list');
-Route::get('/producten/add', 'ProductController@create')->name('add_products');
-Route::post('/producten/add', 'ProductController@store')->name('store_products');
+Route::get('/producten/{id}', 'ProductController@details')->name('product.details');
 
-
-Route::prefix('admin')->group(function() {
-  Route::get('users', function() { return 'admin users'; });
-  Route::get('products', function() { return 'admin products'; });
-  Route::get('categories', function() { return 'admin categories'; });
+Route::prefix('/admin')->middleware('auth')->group(function() {
+  Route::get('/producten/add', 'ProductController@create')->name('add_products');
+  Route::post('/producten/add', 'ProductController@store')->name('store_products');
+  Route::get('/blogs/add', 'BlogController@create')->name('add_blogs');
+  Route::post('/blogs/add', 'BlogController@store')->name('store_blogs');
 });
 
 
-// Route::get('/dit/is/een/lange-url/zeg', 'PageController@longUrl')->name('page');
-// Route::redirect('/korte-url', '/dit/is/een/lange-url/zeg')->name('kortere-url');
+Route::get('/blogs', 'BlogController@index')->name('blog.list');
+Route::get('/blogs/{id}', 'BlogController@details')->name('blog.details');
 
 
-
-Route::get('/admin', 'AdminController@list')->name('admin');
-
-
-Route::get('/blog/artikel/{artikel}', 'BlogController@showArtikel')->where('artikel', '[A-Za-z]+');
-
-
-// Route::get('/mijn-account', 'AccountController@view')->name('account');
-// Route::get('/mijn-account/bestellingen/{bestelling?}', 'AccountController@bestelling')->name('account_bestellingen');
-// Route::get('/mijn-account/instellingen', 'AccountController@instelling')->name('account_instellingen');
-
-
-
-Route::get('/companies', 'CompanyController@list')->name('companies');
-Route::get('/companies/{id}', 'CompanyController@details')->name('company');
+Auth::routes();

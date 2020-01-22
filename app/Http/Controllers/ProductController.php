@@ -39,9 +39,9 @@ class ProductController extends Controller
     public function store(Request $request)
     {
 
-      $uploadedfile = $request->file('image');
-      $newFilename = $uploadedfile->store('public/products');
-      dd($newFilename);
+      // $uploadedfile = $request->file('image');
+      // $newFilename = $uploadedfile->store('public/products');
+      // dd($newFilename);
 
        $productData = $request->validate(
          [
@@ -105,6 +105,12 @@ class ProductController extends Controller
     public function showProduct($id = 0, Request $request)
     {
         return response('GO AWAY it not found', 404);
+    }
+
+    public function details($id)
+    {
+      $productDetail = Product::find($id);
+      return view('product.details', ['product' => $productDetail]);
     }
 
 }

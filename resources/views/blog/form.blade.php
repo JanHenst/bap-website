@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('header')
-  <h3>Product toevoegen</h3>
+  <h3>Blog maken</h3>
 @endsection
 
 @section('content')
@@ -12,7 +12,7 @@
     </div>
   @endif
 
-  <form action="{{ route('store_products') }}" method="POST" enctype="multipart/form-data">
+  <form action="{{ route('store_blogs') }}" method="POST" enctype="multipart/form-data">
     @csrf
     <div class="form-group first">
       <label for="">Titel:</label>
@@ -35,30 +35,10 @@
       @enderror
     </div>
     <div class="form-group">
-      <label for="">Price:</label>
-      <br>
-      <input type="text" class="form-control @error('price') is-invalid @enderror" name="price" value="{{ old('price') }}">
-      @error('price')
-        <div class="error-message">
-          {{ $message }}
-        </div>
-      @enderror
-    </div>
-    <div class="form-group">
       <label for="">Publication date:</label>
       <br>
       <input type="text" class="form-control @error('pub_date') is-invalid @enderror" name="pub_date" value="{{ old('pub_date') }}">
       @error('pub_date')
-        <div class="error-message">
-          {{ $message }}
-        </div>
-      @enderror
-    </div>
-    <div class="form-group">
-      <label for="">Afbeelding</label>
-      <br>
-      <input type="file" class="form-control @error('image') is-invalid @enderror" name="image">
-      @error('image')
         <div class="error-message">
           {{ $message }}
         </div>

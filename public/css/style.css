@@ -33,10 +33,6 @@ nav a:hover {
   color: black;
   text-decoration: underline;
 }
-/*
-.bedrijven td {
-  border: solid 1px black;
-} */
 
 .back {
   text-decoration: none;
@@ -81,4 +77,23 @@ nav a:hover {
   background: #ff4d4d;
   color: white;
   padding: 2px;
+}
+
+
+/* All blogs page */
+.container-lg {
+  align-items: center;
+  padding: 10px;
+}
+.container-lg h5 {
+  font-weight: bold;
+}
+
+.blogDesc {
+  height: 5.9em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.blogDate {
+  padding-top: .5em;
 }
