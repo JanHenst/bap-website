@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Blogs;
 
+
+
 class BlogController extends Controller
 {
   /**
@@ -14,8 +16,7 @@ class BlogController extends Controller
    */
   public function index()
   {
-    // $products = Product::all();
-    $blogs = Blogs::paginate(3);
+    $blogs = Blogs::orderBy('id', 'desc')->paginate(3);
 
     return view('blog.list', ['blogs' => $blogs]);
 

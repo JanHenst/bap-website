@@ -14,7 +14,7 @@ class BlogSeeder extends Seeder
     {
       $faker = Faker\Factory::create();
 
-      for($i = 0; $i < 5; $i++) {
+      for($i = 0; $i < 20; $i++) {
 
           $blog = new Blogs();
           $blog->title = $faker->text(20);

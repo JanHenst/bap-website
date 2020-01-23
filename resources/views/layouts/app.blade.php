@@ -85,16 +85,7 @@
               Mijn Laravel site
             @show
           </h2>
-        </header>
-
-        <nav class="linkNav">
-            <a href="{{ route('homepage') }}">Home</a>
-            <a href="{{ route('add_products') }}">Add a product</a>
-            <a href="{{ route('product.list') }}">All products</a>
-            <a href="{{ route('blog.list') }}">All blogs</a>
-            <a href="{{ route('add_blogs') }}">Make a blog</a>
-
-        </nav> -->
+        </header> -->
 
 
         <main class="py-4">
