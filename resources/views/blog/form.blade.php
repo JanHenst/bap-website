@@ -44,6 +44,16 @@
         </div>
       @enderror
     </div>
+      <div class="form-group">
+          <label for="">Image</label>
+          <br>
+          <input type="file" class="form-control @error('image') is-invalid @enderror" name="image">
+          @error('image')
+          <div class="error-message">
+              {{ $message }}
+          </div>
+          @enderror
+      </div>
     <button class="submit_button" type="submit" name="submit_button">Submit</button>
   </form>
 @endsection

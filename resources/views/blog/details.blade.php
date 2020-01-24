@@ -8,6 +8,7 @@
 
   <h3>{{ $blog->title }}</h3><br>
   <p>{{ $blog->description }}</p><br>
+  <img style="width: 50vw" src="{{ asset('storage/' . $blog->image) }}" /><br>
   <p>{{ $blog->pub_date }}</p><br>
 
   <hr>

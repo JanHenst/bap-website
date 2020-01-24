@@ -40,17 +40,22 @@ class BlogController extends Controller
    */
   public function store(Request $request)
   {
+
     $blogData = $request->validate(
       [
         'title' => 'required|min:5',
         'description' => 'required|min:20',
         'pub_date' => 'required|after_or_equal:today',
+        'image' => 'image'
       ]
   );
 
-  $blog = Blogs::create($blogData);
+      $newFileName = $blogData['image']->store('products', 'public');
+      $blogData['image'] = $newFileName;
 
-  return view('blog.list');
+      $blog = Blogs::create($blogData);
+
+      return redirect()->route('blog.list');
 
   }
 
